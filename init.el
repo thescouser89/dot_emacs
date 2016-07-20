@@ -54,6 +54,9 @@
 (require 'helm)
 (helm-mode 1)
 
+;; Use helm-M-x instead of regular M-x, because eunderhill says it's better
+(global-set-key (kbd "M-x") 'helm-M-x)
+
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
