@@ -49,6 +49,14 @@
   :ensure t
   :init (projectile-global-mode))
 
+(use-package neotree
+  :ensure t
+  :bind (([f2] . neotree-toggle)))
+
+(use-package company
+  :ensure t
+  :init (global-company-mode))
+
 ;; disable menubar
 (menu-bar-mode -1)
 
@@ -64,6 +72,14 @@
 ;; show matching parentheses
 (show-paren-mode 1)
 
+;; close opening (, " etc
+(electric-pair-mode 1)
+
+(use-package whitespace
+  :init
+  (setq whitespace-style '(face empty tabs lines-tail trailing))
+  (global-whitespace-mode 1))
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
@@ -73,7 +89,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (noctilux-theme use-package helm flycheck evil-magit))))
+    (company-mode noctilux-theme use-package helm flycheck evil-magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
