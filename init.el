@@ -21,11 +21,13 @@
 (unless (package-installed-p 'use-package)
     (package-install 'use-package))
 
+;;; vim thing
 (use-package evil
   :ensure t
   :config
   (evil-mode 1))
 
+;;; helm autocomplete thing
 (use-package helm
   :ensure t
   :config
@@ -33,27 +35,34 @@
   :bind (("M-x" . helm-M-x)
 	 ("M-;" . helm-buffers-list)))
 
+;;; git integration
 (use-package magit
   :ensure t)
- 
+
+;;; make evil and magit work
 (use-package evil-magit
   :ensure t)
 
+;;; check for syntax errors
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
 
+;;; theme
 (use-package noctilux-theme
   :ensure t)
 
+;;; project management
 (use-package projectile
   :ensure t
   :init (projectile-global-mode))
 
+;;; show tree
 (use-package neotree
   :ensure t
   :bind (([f2] . neotree-toggle)))
 
+;;; auto-complete stuff
 (use-package company
   :ensure t
   :init (global-company-mode))
