@@ -33,7 +33,8 @@
   :config
   (helm-mode 1)
   :bind (("M-x" . helm-M-x)
-	 ("M-;" . helm-buffers-list)))
+	 ("M-;" . helm-buffers-list)
+	 ("M-/" . helm-occur)))
 
 ;;; git integration
 (use-package magit
@@ -66,6 +67,10 @@
 (use-package company
   :ensure t
   :init (global-company-mode))
+
+(use-package indent-guide
+  :ensure t
+  :init (indent-guide-global-mode))
 
 ;; disable menubar
 (menu-bar-mode -1)
