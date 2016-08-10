@@ -34,7 +34,7 @@
 
 (use-package magit
   :ensure t)
-  
+ 
 (use-package evil-magit
   :ensure t)
 
@@ -67,7 +67,8 @@
 (tool-bar-mode -1)
 
 ;; show line numbers
-(global-linum-mode t)
+;; but don't show it for ansi-shell and eshell
+(add-hook 'find-file-hook 'linum-mode)
 
 ;; show matching parentheses
 (show-paren-mode 1)
