@@ -30,7 +30,8 @@
   :ensure t
   :config
   (helm-mode 1)
-  :bind (("M-x" . helm-M-x)))
+  :bind (("M-x" . helm-M-x)
+	 ("M-;" . helm-buffers-list)))
 
 (use-package magit
   :ensure t)
