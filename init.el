@@ -81,6 +81,14 @@
   (setq whitespace-style '(face empty tabs lines-tail trailing))
   (global-whitespace-mode 1))
 
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
